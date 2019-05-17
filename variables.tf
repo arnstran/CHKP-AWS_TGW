@@ -25,20 +25,20 @@ variable "test_cidr_vpc" {
 
 # Private key
 variable "key_name" {
-  default = "AWS-IL-training"
+  default = ""
 }
 
 # SIC key
 variable "sic_key" {
-  default = "vpn12345"
+  default = ""
 }
 # Admin Email key
 variable "admin_email" {
-  default = "astrand@checkpoint.com"
+  default = ""
 }
 variable "password_hash" {
   description = "Password for the Check Point servers"
-  default     = "$1$BBROBBBB$3PnqP2zapsWO.mrkGbqGQ1"
+  default     = ""
 }
 
 variable "management_server_name" {
@@ -61,6 +61,6 @@ variable "project_name" {
 }
 
 variable "Current_Public_IP" {
-  description = "Your current public_IP to access to VM"
+  description = "Your current public_IP for access to Jumphost VM"
   default     = "84.247.178.23/32"
 }
