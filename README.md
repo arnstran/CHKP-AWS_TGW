@@ -19,11 +19,12 @@ Notes:
 Run:
 Before you run the templates, variables.tf needs to be updated. At least AWS key, password, SIC key and SSH key. 
 Update the variable with your hosts public IP for remote access. And make sure relevant variables (management_server_name and tgw_configuration_template_name) matches your Management server autoprovision configuration that you did above.
-Put the files in a directory (download or git clone) on your host (the host where terraform is installed), and from that directory run:  
-    'terraform init'
-    'terraform 0.12upgrade' (only if terraform version 0.12 is used)
-    'terraform plan' (optional)
-    'terraform apply'
+
+Put the files in a directory (download or git clone) on your host (the host where terraform is installed), and from that directory run:
+    - 'terraform init'
+    - 'terraform 0.12upgrade' (only if terraform version 0.12 is used)
+    - 'terraform plan' (optional)
+    - 'terraform apply'
 
 Testing: When the deployment finishes, it prints the IP of the Jumphost
 
