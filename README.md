@@ -36,6 +36,7 @@ Put the files in a directory (download or git clone) on your host (the host wher
 
 Testing: When the deployment finishes, it prints the IP of the Jumphost
 
+- When the deployment finished it still takes 10-15 minutes for all the Check Point autoprovison to finish.
 - Test between spokes (E/W) by SSH'ing to the Jumphost (user: 'ubuntu' and need to use AWS key for authentication) and pinging the private web server in the other spoke (10.210.100.x).
 - Test outbound by pinging 8.8.8.8
 - Verify logs in SmartConsole
