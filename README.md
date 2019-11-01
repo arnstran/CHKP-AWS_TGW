@@ -25,7 +25,7 @@ Notes:
 
 Run:
 Before you run the templates, variables.tf needs to be updated. At least AWS key, password, SIC key and SSH key. 
-Update the variable with your hosts public IP for remote access. And make sure relevant variables (management_server_name and tgw_configuration_template_name) matches your Management server autoprovision configuration that you did above.
+Update the variable with your hosts public IP for remote access. And make sure relevant variables (management_server_name, tgw_configuration_template_name and tgw_community_name) matches your Management server autoprovision configuration that you did above.
 
 Put the files in a directory (download or git clone) on your host (the host where terraform is installed), and from that directory run:
 - 'terraform init'
