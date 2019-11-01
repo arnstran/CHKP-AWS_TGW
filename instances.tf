@@ -64,6 +64,11 @@ resource "aws_instance" "private_instance" {
   }
 }
 
+output "Private-Web_IP" {
+  value = "${aws_instance.private_instance.private_ip}"
+	description = "The Private IP of the Private Web server"
+}
+
 ######################################
 ########### Test client ##############
 ######################################
@@ -84,4 +89,5 @@ resource "aws_instance" "test_instance" {
 }
 output "test-Ubuntu_IP" {
   value = "${aws_instance.test_instance.public_ip}"
-} 
+	description = "The Public IP of the Jumphost"
+}
