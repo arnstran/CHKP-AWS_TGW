@@ -42,8 +42,8 @@ variable "password_hash" {
 }
 
 variable "management_server_name" {
-  description = "The name of the maangement server in the cloudformation template"
-  default     = "management-server"
+  description = "The name of the management server in the cloudformation template"
+  default     = "mgmt"
 }
 
 variable "tgw_configuration_template_name" {
@@ -61,6 +61,6 @@ variable "project_name" {
 }
 
 variable "Current_Public_IP" {
-  description = "Your current public_IP for access to Jumphost VM"
-  default     = "84.247.178.23/32"
+  description = "Your current public_IP to access to VM"
+  default     = "1.2.3.4/32"
 }

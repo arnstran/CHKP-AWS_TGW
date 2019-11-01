@@ -1,3 +1,7 @@
+provider "aws" {
+        version = "~> 2.33.0"
+}
+
 ##########################################
 ########### Inbound VPC  ##############
 ##########################################
@@ -127,8 +131,8 @@ resource "aws_security_group" "private_security_group" {
     cidr_blocks = ["0.0.0.0/0"]
   }  
   ingress {
-    from_port   = 0
-    to_port     = 0
+    from_port   = "-1"
+    to_port     = "-1"
     protocol    = "ICMP"
     cidr_blocks = ["0.0.0.0/0"]
   }   

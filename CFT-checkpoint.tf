@@ -16,7 +16,7 @@ resource "aws_cloudformation_stack" "checkpoint_tgw_cloudformation_stack" {
     GatewaysInstanceType                        = "c5.large"
     GatewaysMinSize                             = "2"
     GatewaysMaxSize                             = "5"
-    GatewaysLicense                             = "R80.20-BYOL"
+    GatewaysLicense                             = "R80.30-BYOL"
     GatewaysPasswordHash                        = "${var.password_hash}"
     GatewaysSIC                                 = "${var.sic_key}"
     AdminEmail                                  = "${var.admin_email}"
