@@ -6,11 +6,15 @@ Requirements:
 - Terraform installed on a machine (Terraform version 0.11.15 tested. 0.12 needs 'terraform 0.12upgrade' after the 'terraform init')
 - An existing R80.30 Check Point Management prepared with autoprovision and policy for the TGW
     - https://sc1.checkpoint.com/documents/IaaS/WebAdminGuides/EN/CP_CloudGuard_AWS_Transit_Gateway/html_frameset.htm
-- AWS credentials in variable file or better as Environment Variables on the host
-    Example added to the end of .bashrc on your host
-        export AWS_ACCESS_KEY_ID='XXXXXXXXXXXXXXXXX'
-        export AWS_SECRET_ACCESS_KEY='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-        export AWS_REGION=eu-central-1
+- AWS credentials in variable file or better as Environment Variables on the host:
+
+Example added to the end of .bashrc on your host:
+
+export AWS_ACCESS_KEY_ID='XXXXXXXXXXXXXXXXX'
+
+export AWS_SECRET_ACCESS_KEY='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+
+export AWS_REGION=eu-central-1
 
 Notes:
 - Management server communicate with gateways over public IPs
