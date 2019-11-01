@@ -1,13 +1,13 @@
 # CHKP-AWS_TGW
 
-Deploys a Check Point solution with Transit Gateway using Terraform.
+Deploys a Check Point ASG solution in AWS with Transit Gateway using Terraform.
 
-Needs:
-- terraform installed or run from Azure CLI
-    https://azurecitadel.com/prereqs/wsl/
-- an existing R80.20 Check Point Management prepared with autoprovision and policy for the TGW-
+Requirements:
+- Terraform installed on a machine (Terraform version 0.11.15 tested. 0.12 needs 'terraform 0.12upgrade' after the 'terraform init')
+    - Can also run from Azure CLI (which use terraform version 0.12.x)
+- An existing R80.30 Check Point Management prepared with autoprovision and policy for the TGW-
     https://sc1.checkpoint.com/documents/IaaS/WebAdminGuides/EN/CP_CloudGuard_AWS_Transit_Gateway/html_frameset.htm
-- Azure credentials in variable file or better as Environment Variables on the host
+- AWS credentials in variable file or better as Environment Variables on the host
     Example added to the end of .bashrc on your host
         export AWS_ACCESS_KEY_ID='XXXXXXXXXXXXXXXXX'
         export AWS_SECRET_ACCESS_KEY='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
@@ -15,12 +15,24 @@ Needs:
 
 Notes:
 - Management server communicate with gateways over public IPs
-- Update the variables with your hosts public IP for remote access
+- R80.30 gateways will be deployed
 
 Run:
-put the files in a directory on your host (download or git clone) and fron that directory run:
-'terraform init'
+Before you run the templates, variables.tf needs to be updated. At least AWS key, password, SIC key and SSH key. 
+Update the variable with your hosts public IP for remote access. And make sure relevant variables (management and template) matches your Management server autoprovision configuration that you did above.
+Put the files in a directory (download or git clone) on your host (the host where terraform is installed), and from that directory run: 'terraform init'
+'terraform 0.12upgrade' (only if terraform version 0.12 is used)
 'terraform plan' (optional)
-'terrafrom apply'
+'terraform apply'
+
+Testing: When the deployment finishes, it prints the IP of the Jumphost and the domain of the web application
+
+Test between spokes (E/W) by SSH'ing to the Jumphost (need to use SSH key for authentication) and pinging the server
+in the other spoke.
+Test outbound by pinging 8.8.8.8
+Verify logs in SmartConsole
+
+Stop/destroy: When finished, stop instances or run 'terraform destroy' to remove the deployment
 
 Known issues:
+Sometimes 'terraform destroy' fails. A rerun or two fixes it.
