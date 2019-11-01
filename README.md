@@ -28,8 +28,7 @@ Put the files in a directory (download or git clone) on your host (the host wher
 
 Testing: When the deployment finishes, it prints the IP of the Jumphost
 
-- Test between spokes (E/W) by SSH'ing to the Jumphost (user: 'ubuntu' and need to use AWS key for authentication) and pinging the server
-in the other spoke.
+- Test between spokes (E/W) by SSH'ing to the Jumphost (user: 'ubuntu' and need to use AWS key for authentication) and pinging the server in the other spoke (10.210.100.x).
 - Test outbound by pinging 8.8.8.8
 - Verify logs in SmartConsole
 
